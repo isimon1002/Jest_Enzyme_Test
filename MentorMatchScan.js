@@ -9,14 +9,14 @@ var docClient = new AWS.DynamoDB.DocumentClient();
 
 var params = {
     TableName: "MentorMatch2",
-    ProjectionExpression: "userId, email, familyName, givenName, skill",
-    // FilterExpression: "#userId = :idd",
-    // ExpressionAttributeNames: {
-    //     "#userId": "userId",
-    // },
-    // ExpressionAttributeValues: {
-	// 	":idd":"100318851014008686554"
-    // }
+    ProjectionExpression: "userId, email, familyName, givenName, skills",
+    FilterExpression: "#userId = :idd",
+    ExpressionAttributeNames: {
+        "#userId": "userId",
+    },
+    ExpressionAttributeValues: {
+		":idd":"100601514848603473393"
+    }
 };
 
 console.log("Scanning Users table.");
